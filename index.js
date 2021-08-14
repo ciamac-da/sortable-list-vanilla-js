@@ -28,12 +28,14 @@ const createList = () => {
 .map(a => a.value)
 .forEach((person, index)=> {
  const listItem = document.createElement("li")
+
  listItem.setAttribute("data-index", index)
+
  listItem.innerHTML = `
  <span class="number">${index +1}</span>
  <div class="draggable" draggable="true">
  <p class="person-name">${person}</p>
- <i class="fas fa-grip"></i>
+ <i class="fas fa-grip-lines"></i>
  </div>
  `
  listItems.push(listItem)
