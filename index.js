@@ -20,9 +20,13 @@ const listItems = []
 let dragStartIndex
 
 
-// Index list items into DOM
+// Index list items int o DOM
 const createList = () => {
-[...richestPeople].forEach((person, index)=> {
+[...richestPeople]
+.map(a => ({value: a, sort: Math.random() }))
+.sort((a, b) => a.sort - b.sort)
+.map(a => a.value)
+.forEach((person, index)=> {
  const listItem = document.createElement("li")
  listItem.setAttribute("data-index", index)
  listItem.innerHTML = `
